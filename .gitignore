@@ -45,3 +45,16 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.bak
+*~
+*.swp
+*.wlf
+*CVS/
+*sim/work/
+*.log
+hdl/
+implementation/
+sw/bsp/ppc440_inst/
+sw/sw/Debug
+__xps/
+XpsGuiSessionLock

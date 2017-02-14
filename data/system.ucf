@@ -1,0 +1,447 @@
+############################################################################
+##                       Paul Scherrer Institute (PSI)
+############################################################################
+## Unit    : system.ucf
+## Author  : Goran Marinkovic, Section Diagnostic
+## Version : $Revision: 1.6 $
+############################################################################
+## Copyright© PSI, Section Diagnostic
+############################################################################
+## Comment : Constraints file targetted to xc5vfx70T-ff1136 BPM FPGA
+############################################################################
+############################################################################
+# Chip constraints
+############################################################################
+CONFIG STEPPING="0";
+############################################################################
+# Clock constraints
+############################################################################
+NET CLK_BPM_125_INT_P TNM_NET = CLK_BPM_125_INT_P;
+TIMESPEC TS_CLK_BPM_125_INT_P = PERIOD CLK_BPM_125_INT_P 8 ns HIGH 50 %;
+
+NET SYS_5LVDS_2_P TNM_NET = SYS_5LVDS_2_P;
+TIMESPEC TS_PLAYER_EXT_CLK = PERIOD SYS_5LVDS_2_P 4.6 ns HIGH 50 %;
+
+## NET CLK_BPM_200_IDL_P TNM_NET = CLK_BPM_200_IDL_P;
+## TIMESPEC TS_CLK_BPM_200_IDL_P = PERIOD CLK_BPM_200_IDL_P 5 ns HIGH 50 %;
+## NET CLK_BPM_250_INT_P TNM_NET = CLK_BPM_250_INT_P;
+## TIMESPEC TS_CLK_BPM_250_INT_P = PERIOD CLK_BPM_250_INT_P 4 ns HIGH 50 %; 
+############################################################################
+## System interface
+############################################################################
+NET CLK_BPM_125_INT_P             IOSTANDARD = LVDS_25;
+NET CLK_BPM_125_INT_N             IOSTANDARD = LVDS_25;
+NET CLK_BPM_125_INT_P             LOC = H17;
+NET CLK_BPM_125_INT_N             LOC = H18;
+
+## NET CLK_BPM_200_IDL_P             IOSTANDARD = LVDS_25;
+## NET CLK_BPM_200_IDL_N             IOSTANDARD = LVDS_25;
+## NET CLK_BPM_200_IDL_P             LOC = K17;
+## NET CLK_BPM_200_IDL_N             LOC = L18;
+## 
+## NET CLK_BPM_250_INT_P             IOSTANDARD = LVDS_25;
+## NET CLK_BPM_250_INT_N             IOSTANDARD = LVDS_25;
+## NET CLK_BPM_250_INT_P             LOC = G15;
+## NET CLK_BPM_250_INT_N             LOC = G16;
+############################################################################
+## LED interface
+############################################################################
+NET "BPM_LED_1_RED" LOC = D12 | IOSTANDARD = "LVCMOS18";
+NET "BPM_LED_1_GREEN" LOC = C12 | IOSTANDARD = "LVCMOS18";
+NET "BPM_LED_2_RED" LOC = A13 | IOSTANDARD = "LVCMOS18";
+NET "BPM_LED_2_GREEN" LOC = B12 | IOSTANDARD = "LVCMOS18";
+############################################################################
+## UART interface
+############################################################################
+NET "BPM_CFG_COM_0_UART_TX" LOC = AK33 | IOSTANDARD = "LVCMOS25" | DRIVE = 8 | SLEW = FAST;
+NET "BPM_CFG_COM_1_UART_RX" LOC = AK34 | IOSTANDARD = "LVCMOS25";
+############################################################################
+## COMMON PINS
+############################################################################
+NET "BPM_CFG_COM_2" LOC = AK32 | IOSTANDARD = "LVCMOS25";
+NET "BPM_CFG_COM_3" LOC = AJ32 | IOSTANDARD = "LVCMOS25";
+NET "BPM_CFG_COM_4" LOC = J15 | IOSTANDARD = "LVCMOS25";
+############################################################################
+## DDR2 SDRAM interface
+############################################################################
+#  Source:               ddr2_splb/ddr2_splb/USER_LOGIC_I/ddr2_ctrl_inst/ddr2_dqs_iob_gen[1].ddr2_dqs_oddr_inst (FF)
+#  Destination:          ddr2_splb/ddr2_splb/USER_LOGIC_I/ddr2_ctrl_inst/ddr2_dqs_iob_gen[1].ddr2_dqs_rd_iddr_inst (FF)
+INST "*/ddr2_dqs_iob_gen[*].ddr2_dqs_oddr_inst" TNM = tim_ignore_path_src1;
+INST "*/ddr2_dqs_iob_gen[*].ddr2_dqs_rd_iddr_inst" TNM = tim_ignore_path_dest1;
+TIMESPEC TS_1 = FROM tim_ignore_path_src1 TO tim_ignore_path_dest1 TIG;
+
+
+#  Source:               ddr2_splb/ddr2_splb/USER_LOGIC_I/ddr2_ctrl_inst/ddr2_dqs_iob_gen[1].ddr2_dqs_wr_t_fdrse_inst (FF)
+#  Destination:          ddr2_splb/ddr2_splb/USER_LOGIC_I/ddr2_ctrl_inst/ddr2_dqs_iob_gen[1].ddr2_dqs_rd_iddr_inst (FF)
+INST "*/ddr2_dqs_iob_gen[*].ddr2_dqs_wr_t_fdrse_inst" TNM = tim_ignore_path_src2;
+INST "*/ddr2_dqs_iob_gen[*].ddr2_dqs_rd_iddr_inst" TNM = tim_ignore_path_des2;
+TIMESPEC TS_2 = FROM tim_ignore_path_src2 TO tim_ignore_path_des2 TIG;
+
+
+#  Source:               ddr2_splb/ddr2_splb/USER_LOGIC_I/ddr2_ctrl_inst/ddr2_dq_iob_gen[4].ddr2_dq_wr_oddr_inst (FF)
+#  Destination:          ddr2_splb/ddr2_splb/USER_LOGIC_I/ddr2_ctrl_inst/ddr2_dq_iob_gen[4].ddr2_dq_rd_iddr_inst (FF)
+INST "*/ddr2_dq_iob_gen[*].ddr2_dq_wr_oddr_inst" TNM = tim_ignore_path_src3;
+INST "*/ddr2_dq_iob_gen[*].ddr2_dq_rd_iddr_inst" TNM = tim_ignore_path_des3;
+TIMESPEC TS_3 = FROM tim_ignore_path_src3 TO tim_ignore_path_des3 TIG;
+
+NET DDR2_CKE                     IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_CK_P                    IOSTANDARD = DIFF_SSTL18_II_DCI;
+NET DDR2_CK_N                    IOSTANDARD = DIFF_SSTL18_II_DCI;
+NET DDR2_CS_B                    IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_RAS_B                   IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_CAS_B                   IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_WE_B                    IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_BA(*)                   IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_ODT                     IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_DM(*)                   IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_DQS_P(*)                IOSTANDARD = DIFF_SSTL18_II_DCI;
+NET DDR2_DQS_N(*)                IOSTANDARD = DIFF_SSTL18_II_DCI;
+NET DDR2_A(*)                    IOSTANDARD = SSTL18_I_DCI;
+NET DDR2_DQ(*)                   IOSTANDARD = SSTL18_II_DCI;
+NET DDR2_CKE                     LOC = F8;
+NET DDR2_CK_P                    LOC = K8;
+NET DDR2_CK_N                    LOC = K9;
+NET DDR2_CS_B                    LOC = M7;
+NET DDR2_RAS_B                   LOC = K7;
+NET DDR2_CAS_B                   LOC = J9;
+NET DDR2_WE_B                    LOC = G8;
+NET DDR2_BA(0)                   LOC = E9;
+NET DDR2_BA(1)                   LOC = F9;
+NET DDR2_BA(2)                   LOC = D11;
+NET DDR2_ODT                     LOC = N7;
+NET DDR2_DM(0)                   LOC = G7;
+NET DDR2_DM(1)                   LOC = H5;
+NET DDR2_DQS_P(0)                LOC = H7;
+NET DDR2_DQS_N(0)                LOC = J7;
+NET DDR2_DQS_P(1)                LOC = J6;
+NET DDR2_DQS_N(1)                LOC = J5;
+NET DDR2_A(0)                    LOC = N8;
+NET DDR2_A(1)                    LOC = H9;
+NET DDR2_A(2)                    LOC = J10;
+NET DDR2_A(3)                    LOC = E11;
+NET DDR2_A(4)                    LOC = N9;
+NET DDR2_A(5)                    LOC = G10;
+NET DDR2_A(6)                    LOC = L9;
+NET DDR2_A(7)                    LOC = F11;
+NET DDR2_A(8)                    LOC = M10;
+NET DDR2_A(9)                    LOC = H10;
+NET DDR2_A(10)                   LOC = F10;
+NET DDR2_A(11)                   LOC = K11;
+NET DDR2_A(12)                   LOC = G11;
+#NET DDR2_A(13)                   LOC = N10;
+#NET DDR2_A(14)                   LOC = J11;
+#NET DDR2_A(15)                   LOC = M8;
+NET DDR2_DQ(0)                   LOC = L6;
+NET DDR2_DQ(1)                   LOC = E7;
+NET DDR2_DQ(2)                   LOC = K6;
+NET DDR2_DQ(3)                   LOC = H8;
+NET DDR2_DQ(4)                   LOC = E8;
+NET DDR2_DQ(5)                   LOC = P7;
+NET DDR2_DQ(6)                   LOC = E6;
+NET DDR2_DQ(7)                   LOC = P6;
+NET DDR2_DQ(8)                   LOC = M5;
+NET DDR2_DQ(9)                   LOC = G6;
+NET DDR2_DQ(10)                  LOC = M6;
+NET DDR2_DQ(11)                  LOC = G5;
+NET DDR2_DQ(12)                  LOC = F6;
+NET DDR2_DQ(13)                  LOC = N5;
+NET DDR2_DQ(14)                  LOC = F5;
+NET DDR2_DQ(15)                  LOC = P5;
+
+############################################################################
+## MGT clock interface
+############################################################################
+NET CLK_BPM_125_MGT_18_P TNM_NET = CLK_BPM_125_MGT_18_P;
+TIMESPEC TS_CLK_BPM_125_MGT_18_P = PERIOD CLK_BPM_125_MGT_18_P 8 ns HIGH 50 %;
+NET CLK_BPM_125_MGT_18_P          LOC = AL5;
+NET CLK_BPM_125_MGT_18_N          LOC = AL4;
+
+NET CLK_BPM_125_MGT_9F_P TNM_NET = CLK_BPM_125_MGT_9F_P;
+TIMESPEC TS_CLK_BPM_125_MGT_9F_P = PERIOD CLK_BPM_125_MGT_9F_P 8 ns HIGH 50 %;
+NET CLK_BPM_125_MGT_9F_P          LOC = H4;
+NET CLK_BPM_125_MGT_9F_N          LOC = H3;
+
+## NET CLK_BPM_150_MGT_P TNM_NET = CLK_BPM_150_MGT_P;
+## TIMESPEC TS_CLK_BPM_150_MGT_P = PERIOD CLK_BPM_150_MGT_P 6.6 ns HIGH 50 %;
+## NET CLK_BPM_150_MGT_P             LOC = Y4;
+## NET CLK_BPM_150_MGT_N             LOC = Y3;
+############################################################################
+## BPM FPGA to SYS FPGA interface
+############################################################################
+NET SYS_BPM_1MGT_P                LOC = G1;
+NET SYS_BPM_1MGT_N                LOC = H1;
+NET BPM_SYS_1MGT_P                LOC = F2;
+NET BPM_SYS_1MGT_N                LOC = G2;
+############################################################################
+## BPM FPGA to BPM FPGA interface
+############################################################################
+NET BPM2_BPM1_1MGT_P              LOC = K1;
+NET BPM2_BPM1_1MGT_N              LOC = J1;
+NET BPM1_BPM2_1MGT_P              LOC = L2;
+NET BPM1_BPM2_1MGT_N              LOC = K2;
+############################################################################
+## BPM FPGA to BP FPGA interface
+############################################################################
+NET "BP_LVDS_0_P" LOC = H14 | IOSTANDARD = "LVDS_25";
+NET "BP_LVDS_0_N" LOC = H15 | IOSTANDARD = "LVDS_25";
+NET "BP_LVDS_1_P" LOC = L14 | IOSTANDARD = "LVDS_25";
+NET "BP_LVDS_1_N" LOC = K14 | IOSTANDARD = "LVDS_25";
+NET "BP_LVDS_2_P" LOC = J14 | IOSTANDARD = "LVDS_25";
+NET "BP_LVDS_2_N" LOC = H13 | IOSTANDARD = "LVDS_25";
+NET "BP_LVDS_3_P" LOC = K13 | IOSTANDARD = "LVDS_25";
+NET "BP_LVDS_3_N" LOC = K12 | IOSTANDARD = "LVDS_25";
+NET "BP_LVDS_4_P" LOC = J12 | IOSTANDARD = "LVCMOS25" | CLOCK_DEDICATED_ROUTE = FALSE;
+NET "BP_LVDS_4_N" LOC = H12 | IOSTANDARD = "LVCMOS25" | CLOCK_DEDICATED_ROUTE = FALSE;
+#############################################################################
+### BPM FPGA to SYS FPGA interface
+#############################################################################
+NET "SYS_5LVDS_0_P" LOC = K23 | IOSTANDARD = LVDS_25;
+NET "SYS_5LVDS_0_N" LOC = K22 | IOSTANDARD = LVDS_25;
+NET "SYS_5LVDS_1_P" LOC = L21 | IOSTANDARD = LVDS_25;
+NET "SYS_5LVDS_1_N" LOC = L20 | IOSTANDARD = LVDS_25;
+NET "SYS_5LVDS_2_P" LOC = L19 | IOSTANDARD = LVDS_25;
+NET "SYS_5LVDS_2_N" LOC = K19 | IOSTANDARD = LVDS_25;
+NET "SYS_5LVDS_3_P" LOC = J16 | IOSTANDARD = LVDS_25;
+NET "SYS_5LVDS_3_N" LOC = J17 | IOSTANDARD = LVDS_25;
+NET "SYS_5LVDS_4_P" LOC = L15 | IOSTANDARD = LVCMOS25 | PULLUP;
+NET "SYS_5LVDS_4_N" LOC = L16 | IOSTANDARD = LVCMOS25;
+
+############################################################################
+## VME P0 interface
+############################################################################
+## NET P0_4LVDS_IO_0_P                   LOC = AL15 | IOSTANDARD = LVDS_25;      ## RTM TRG0 IN
+## NET P0_4LVDS_IO_0_N                   LOC = AL14 | IOSTANDARD = LVDS_25;      ## RTM TRG0 IN
+## NET P0_4LVDS_IO_1_P                   LOC = AJ16 | IOSTANDARD = LVDS_25;      ## RTM TRG1 IN
+## NET P0_4LVDS_IO_1_N                   LOC = AJ15 | IOSTANDARD = LVDS_25;      ## RTM TRG1 IN
+## NET P0_4LVDS_IO_2_P                   LOC = AK17 | IOSTANDARD = LVDS_25;
+## NET P0_4LVDS_IO_2_N                   LOC = AJ17 | IOSTANDARD = LVDS_25;
+## NET P0_4LVDS_IO_3_P                   LOC = AK16 | IOSTANDARD = LVDS_25;
+## NET P0_4LVDS_IO_3_N                   LOC = AL16 | IOSTANDARD = LVDS_25;
+############################################################################
+## QSFP MGTs
+############################################################################
+NET PB_BPM_0_P                  LOC = N1;                         #        - PB_8MGT_RX.P(0)
+NET PB_BPM_0_N                  LOC = P1;                         #        - PB_8MGT_RX.N(0)
+NET BPM_PB_0_P                  LOC = M2;                         #        - PB_8MGT_TX.P(0)
+NET BPM_PB_0_N                  LOC = N2;                         #        - PB_8MGT_TX.N(0)
+NET PB_BPM_1_P                  LOC = AE1;                        #        - PB_8MGT_RX.P(1)
+NET PB_BPM_1_N                  LOC = AF1;                        #        - PB_8MGT_RX.N(1)
+NET BPM_PB_1_P                  LOC = AD2;                        #        - PB_8MGT_TX.P(1)
+NET BPM_PB_1_N                  LOC = AE2;                        #        - PB_8MGT_TX.N(1)
+NET PB_BPM_2_P                  LOC = T1;                         #        - PB_8MGT_RX.P(2)
+NET PB_BPM_2_N                  LOC = R1;                         #        - PB_8MGT_RX.N(2)
+NET BPM_PB_2_P                  LOC = U2;                         #        - PB_8MGT_TX.P(2)
+NET BPM_PB_2_N                  LOC = T2;                         #        - PB_8MGT_TX.N(2)
+NET PB_BPM_3_P                  LOC = AH1;                        #        - PB_8MGT_RX.P(3)
+NET PB_BPM_3_N                  LOC = AG1;                        #        - PB_8MGT_RX.N(3)
+NET BPM_PB_3_P                  LOC = AJ2;                        #        - PB_8MGT_TX.P(3)
+NET BPM_PB_3_N                  LOC = AH2;                        #        - PB_8MGT_TX.N(3)
+NET QSFP_BPM_4_P                LOC = W1;                         # J1-F2  - PB_8MGT_RX.P(4)
+NET QSFP_BPM_4_N                LOC = Y1;                         # J1-F3  - PB_8MGT_RX.N(4)
+NET BPM_QSFP_4_P                LOC = V2;                         # J1-G5  - PB_8MGT_TX.P(4)
+NET BPM_QSFP_4_N                LOC = W2;                         # J1-G6  - PB_8MGT_TX.N(4)
+NET QSFP_BPM_5_P                LOC = AL1;                        # J1-F8  - PB_8MGT_RX.P(5)
+NET QSFP_BPM_5_N                LOC = AM1;                        # J1-F9  - PB_8MGT_RX.N(5)
+NET BPM_QSFP_5_P                LOC = AK2;                        # J1-G11 - PB_8MGT_TX.P(5)
+NET BPM_QSFP_5_N                LOC = AL2;                        # J1-G12 - PB_8MGT_TX.N(5)
+NET QSFP_BPM_6_P                LOC = AB1;                        # J1-H2  - PB_8MGT_RX.P(6)
+NET QSFP_BPM_6_N                LOC = AA1;                        # J1-H3  - PB_8MGT_RX.N(6)
+NET BPM_QSFP_6_P                LOC = AC2;                        # J1-J5  - PB_8MGT_TX.P(6)
+NET BPM_QSFP_6_N                LOC = AB2;                        # J1-J6  - PB_8MGT_TX.N(6)
+NET QSFP_BPM_7_P                LOC = AP3;                        # J1-H8  - PB_8MGT_RX.P(7)
+NET QSFP_BPM_7_N                LOC = AP2;                        # J1-H9  - PB_8MGT_RX.N(7)
+NET BPM_QSFP_7_P                LOC = AN4;                        # J1-J11 - PB_8MGT_TX.P(7)
+NET BPM_QSFP_7_N                LOC = AN3;                        # J1-J12 - PB_8MGT_TX.N(7)
+############################################################################
+## BPM FPGA to P0 MGT
+############################################################################
+NET P0_2MGT_RX1_P                 LOC = A3;
+NET P0_2MGT_RX1_N                 LOC = A2;
+NET P0_2MGT_TX1_P                 LOC = B4;
+NET P0_2MGT_TX1_N                 LOC = B3;
+NET P0_2MGT_RX2_P                 LOC = D1;
+NET P0_2MGT_RX2_N                 LOC = C1;
+NET P0_2MGT_TX2_P                 LOC = E2;
+NET P0_2MGT_TX2_N                 LOC = D2;
+
+############################################################################
+## BPM FPGA to BPM FPGA 4MGT
+############################################################################
+NET BPM_BPM_RX_MGT0_P             LOC = A9;
+NET BPM_BPM_RX_MGT1_P             LOC = A6;
+NET BPM_BPM_RX_MGT2_P             LOC = AP6;
+NET BPM_BPM_RX_MGT3_P             LOC = AP9;
+NET BPM_BPM_RX_MGT0_N             LOC = A8;
+NET BPM_BPM_RX_MGT1_N             LOC = A7;
+NET BPM_BPM_RX_MGT2_N             LOC = AP7;
+NET BPM_BPM_RX_MGT3_N             LOC = AP8;
+NET BPM_BPM_TX_MGT0_P             LOC = B10;
+NET BPM_BPM_TX_MGT1_P             LOC = B5;
+NET BPM_BPM_TX_MGT2_P             LOC = AN5;
+NET BPM_BPM_TX_MGT3_P             LOC = AN10;
+NET BPM_BPM_TX_MGT0_N             LOC = B9;
+NET BPM_BPM_TX_MGT1_N             LOC = B6;
+NET BPM_BPM_TX_MGT2_N             LOC = AN6;
+NET BPM_BPM_TX_MGT3_N             LOC = AN9;
+
+
+############################################################################
+## QDR SRAM interface
+############################################################################
+NET SRAM_QVLD                     IOSTANDARD = HSTL_I;
+NET SRAM_K_P                      IOSTANDARD = HSTL_I;
+NET SRAM_K_N                      IOSTANDARD = HSTL_I;
+NET SRAM_CQ_P                     IOSTANDARD = DIFF_HSTL_II;
+NET SRAM_CQ_N                     IOSTANDARD = DIFF_HSTL_II;
+NET SRAM_DOFF_B                   IOSTANDARD = HSTL_I;
+NET SRAM_RPS_B                    IOSTANDARD = HSTL_I;
+NET SRAM_WPS_B                    IOSTANDARD = HSTL_I;
+NET SRAM_BWS_B(*)                 IOSTANDARD = HSTL_I;
+NET SRAM_A(*)                     IOSTANDARD = HSTL_I;
+NET SRAM_D(*)                     IOSTANDARD = HSTL_I;
+NET SRAM_Q(*)                     IOSTANDARD = HSTL_I_DCI;
+NET SRAM_QVLD                     LOC = E28;
+NET SRAM_K_P                      LOC = N29;
+NET SRAM_K_N                      LOC = P29;
+NET SRAM_CQ_P                     LOC = P31;
+NET SRAM_CQ_N                     LOC = P30;
+NET SRAM_DOFF_B                   LOC = J29;
+NET SRAM_RPS_B                    LOC = U27;
+NET SRAM_WPS_B                    LOC = U31;
+NET SRAM_BWS_B(0)                 LOC = T29;
+NET SRAM_BWS_B(1)                 LOC = U28;
+NET SRAM_BWS_B(2)                 LOC = U30;
+NET SRAM_BWS_B(3)                 LOC = T28;
+#NET SRAM_C_B                     LOC = F28;
+NET SRAM_A(0)                     LOC = R31;
+NET SRAM_A(1)                     LOC = P27;
+NET SRAM_A(2)                     LOC = J30;
+NET SRAM_A(3)                     LOC = L30;
+NET SRAM_A(4)                     LOC = H28;
+NET SRAM_A(5)                     LOC = G30;
+NET SRAM_A(6)                     LOC = F30;
+NET SRAM_A(7)                     LOC = D32;
+NET SRAM_A(8)                     LOC = H29;
+NET SRAM_A(9)                     LOC = E31;
+NET SRAM_A(10)                    LOC = G28;
+NET SRAM_A(11)                    LOC = C34;
+NET SRAM_A(12)                    LOC = B32;
+NET SRAM_A(13)                    LOC = B33;
+NET SRAM_A(14)                    LOC = C32;
+NET SRAM_A(15)                    LOC = C33;
+NET SRAM_A(16)                    LOC = A33;
+NET SRAM_A(17)                    LOC = L29;
+NET SRAM_A(18)                    LOC = U26;
+NET SRAM_A(19)                    LOC = U32;
+NET SRAM_A(20)                    LOC = U25;
+NET SRAM_A(21)                    LOC = U33;
+NET SRAM_D(0)                     LOC = E27;
+NET SRAM_D(1)                     LOC = F25;
+NET SRAM_D(2)                     LOC = G25;
+NET SRAM_D(3)                     LOC = J25;
+NET SRAM_D(4)                     LOC = K24;
+NET SRAM_D(5)                     LOC = L25;
+NET SRAM_D(6)                     LOC = N25;
+NET SRAM_D(7)                     LOC = P24;
+NET SRAM_D(8)                     LOC = R24;
+NET SRAM_D(9)                     LOC = F26;
+NET SRAM_D(10)                    LOC = G27;
+NET SRAM_D(11)                    LOC = H27;
+NET SRAM_D(12)                    LOC = K28;
+NET SRAM_D(13)                    LOC = L26;
+NET SRAM_D(14)                    LOC = M28;
+NET SRAM_D(15)                    LOC = P25;
+NET SRAM_D(16)                    LOC = R27;
+NET SRAM_D(17)                    LOC = T26;
+NET SRAM_D(18)                    LOC = T31;
+NET SRAM_D(19)                    LOC = R32;
+NET SRAM_D(20)                    LOC = P32;
+NET SRAM_D(21)                    LOC = L31;
+NET SRAM_D(22)                    LOC = M31;
+NET SRAM_D(23)                    LOC = J31;
+NET SRAM_D(24)                    LOC = G31;
+NET SRAM_D(25)                    LOC = F31;
+NET SRAM_D(26)                    LOC = F33;
+NET SRAM_D(27)                    LOC = R34;
+NET SRAM_D(28)                    LOC = P34;
+NET SRAM_D(29)                    LOC = N32;
+NET SRAM_D(30)                    LOC = K33;
+NET SRAM_D(31)                    LOC = K34;
+NET SRAM_D(32)                    LOC = J32;
+NET SRAM_D(33)                    LOC = G33;
+NET SRAM_D(34)                    LOC = F34;
+NET SRAM_D(35)                    LOC = E33;
+NET SRAM_Q(0)                     LOC = E26;
+NET SRAM_Q(1)                     LOC = G26;
+NET SRAM_Q(2)                     LOC = H24;
+NET SRAM_Q(3)                     LOC = J24;
+NET SRAM_Q(4)                     LOC = K27;
+NET SRAM_Q(5)                     LOC = M25;
+NET SRAM_Q(6)                     LOC = N24;
+NET SRAM_Q(7)                     LOC = R26;
+NET SRAM_Q(8)                     LOC = T24;
+NET SRAM_Q(9)                     LOC = E29;
+NET SRAM_Q(10)                    LOC = F29;
+NET SRAM_Q(11)                    LOC = H25;
+NET SRAM_Q(12)                    LOC = J27;
+NET SRAM_Q(13)                    LOC = L28;
+NET SRAM_Q(14)                    LOC = M26;
+NET SRAM_Q(15)                    LOC = N28;
+NET SRAM_Q(16)                    LOC = P26;
+NET SRAM_Q(17)                    LOC = T25;
+NET SRAM_Q(18)                    LOC = T33;
+NET SRAM_Q(19)                    LOC = N30;
+NET SRAM_Q(20)                    LOC = M30;
+NET SRAM_Q(21)                    LOC = M32;
+NET SRAM_Q(22)                    LOC = K31;
+NET SRAM_Q(23)                    LOC = H30;
+NET SRAM_Q(24)                    LOC = H33;
+NET SRAM_Q(25)                    LOC = E32;
+NET SRAM_Q(26)                    LOC = D34;
+NET SRAM_Q(27)                    LOC = T34;
+NET SRAM_Q(28)                    LOC = R33;
+NET SRAM_Q(29)                    LOC = L33;
+NET SRAM_Q(30)                    LOC = L34;
+NET SRAM_Q(31)                    LOC = K32;
+NET SRAM_Q(32)                    LOC = J34;
+NET SRAM_Q(33)                    LOC = H34;
+NET SRAM_Q(34)                    LOC = G32;
+NET SRAM_Q(35)                    LOC = E34;
+############################################################################
+## EEPROM interface
+############################################################################
+NET "BPM_EEPROM_WP" LOC = G12 | IOSTANDARD = "LVCMOS18" | DRIVE = 8;
+NET "BPM_EEPROM_SCL" LOC = E13 | IOSTANDARD = "LVCMOS18" | DRIVE = 8;
+NET "BPM_EEPROM_SDA" LOC = E12 | IOSTANDARD = "LVCMOS18" | DRIVE = 8;
+
+#INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM01_TILE/inst_gtx0_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y23; 
+
+#ML84 solve timing violation due to FIFO misplacement
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM01_TILE/inst_gtx0_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y26:RAMB36_X4Y31; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM01_TILE/inst_gtx0_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y26:RAMB36_X4Y31; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM01_TILE/inst_gtx1_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y26:RAMB36_X4Y31;
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM01_TILE/inst_gtx1_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y26:RAMB36_X4Y31;
+
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/P0_TILE/inst_gtx0_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y22:RAMB36_X4Y30; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/P0_TILE/inst_gtx0_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y22:RAMB36_X4Y30; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/P0_TILE/inst_gtx1_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y22:RAMB36_X4Y30;
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/P0_TILE/inst_gtx1_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y22:RAMB36_X4Y30;
+
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/QSFP13_TILE/inst_gtx0_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y10:RAMB36_X4Y18; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/QSFP13_TILE/inst_gtx0_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y10:RAMB36_X4Y18; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/QSFP13_TILE/inst_gtx1_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y10:RAMB36_X4Y18;
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/QSFP13_TILE/inst_gtx1_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y10:RAMB36_X4Y18;
+
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/QSFP02_TILE/inst_gtx0_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y2:RAMB36_X4Y10; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/QSFP02_TILE/inst_gtx0_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y2:RAMB36_X4Y10; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/QSFP02_TILE/inst_gtx1_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y2:RAMB36_X4Y10;
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/QSFP02_TILE/inst_gtx1_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y2:RAMB36_X4Y10;
+
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM23_TILE/inst_gtx0_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y0:RAMB36_X4Y6; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM23_TILE/inst_gtx0_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y0:RAMB36_X4Y6; 
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM23_TILE/inst_gtx1_fifo/mgt_wr_fifo36_inst" LOC=RAMB36_X4Y0:RAMB36_X4Y6;
+INST "ibfb_switch_0/ibfb_switch_0/USER_LOGIC_I/BPM23_TILE/inst_gtx1_fifo/mgt_rd_fifo36_inst" LOC=RAMB36_X4Y0:RAMB36_X4Y6;
+
+############################################################################
+## End of File;
+############################################################################

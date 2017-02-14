@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/koprek_w/ISE/test/test_iic_eeprom/testbench_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="attributes" />
+            <top_module name="i2c_link_package" />
+            <top_module name="numeric_std" />
+            <top_module name="pkg_arrays" />
+            <top_module name="pkg_i2c_if" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_misc" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="testbench" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/testbench/bus2ip_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bus2ip_clk</obj_property>
+      <obj_property name="ObjectShortName">bus2ip_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/slv_i2c_clk_divider" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">slv_i2c_clk_divider[9:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_i2c_clk_divider[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/rec_i2c_control" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rec_i2c_control</obj_property>
+      <obj_property name="ObjectShortName">rec_i2c_control</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/rec_i2c_status" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rec_i2c_status</obj_property>
+      <obj_property name="ObjectShortName">rec_i2c_status</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/slv_i2c_tx_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">slv_i2c_tx_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_i2c_tx_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/slv_i2c_rx_dinb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">slv_i2c_rx_dinb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_i2c_rx_dinb[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/slv_i2c_rx_outb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">slv_i2c_rx_outb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_i2c_rx_outb[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/slv_i2c_rx_addrb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">slv_i2c_rx_addrb[13:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_i2c_rx_addrb[13:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/slv_i2c_mem_web" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">slv_i2c_mem_web[0:0]</obj_property>
+      <obj_property name="ObjectShortName">slv_i2c_mem_web[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/i_i2c_scl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_i2c_scl</obj_property>
+      <obj_property name="ObjectShortName">i_i2c_scl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/o_i2c_scl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">o_i2c_scl</obj_property>
+      <obj_property name="ObjectShortName">o_i2c_scl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/i_i2c_sda" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i_i2c_sda</obj_property>
+      <obj_property name="ObjectShortName">i_i2c_sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/o_i2c_sda" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">o_i2c_sda</obj_property>
+      <obj_property name="ObjectShortName">o_i2c_sda</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/cmd_fsm" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">cmd_fsm</obj_property>
+      <obj_property name="ObjectShortName">cmd_fsm</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/sl_i2c_tx_rdy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_i2c_tx_rdy</obj_property>
+      <obj_property name="ObjectShortName">sl_i2c_tx_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/sl_i2c_tx_start" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_i2c_tx_start</obj_property>
+      <obj_property name="ObjectShortName">sl_i2c_tx_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/sl_i2c_tx_stop" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_i2c_tx_stop</obj_property>
+      <obj_property name="ObjectShortName">sl_i2c_tx_stop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/sl_i2c_tx_ack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_i2c_tx_ack</obj_property>
+      <obj_property name="ObjectShortName">sl_i2c_tx_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/sl_i2c_rx_valid" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_i2c_rx_valid</obj_property>
+      <obj_property name="ObjectShortName">sl_i2c_rx_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/sl_i2c_idle" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_i2c_idle</obj_property>
+      <obj_property name="ObjectShortName">sl_i2c_idle</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/sl_i2c_fail" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_i2c_fail</obj_property>
+      <obj_property name="ObjectShortName">sl_i2c_fail</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/sl_i2c_busbusy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sl_i2c_busbusy</obj_property>
+      <obj_property name="ObjectShortName">sl_i2c_busbusy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/ins_i2c_if/ins_i2c_link_v2/frame_reset_cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">frame_reset_cnt[13:0]</obj_property>
+      <obj_property name="ObjectShortName">frame_reset_cnt[13:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

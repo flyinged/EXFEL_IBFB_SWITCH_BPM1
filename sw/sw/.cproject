@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="xilinx.gnu.ppc.exe.debug.640949368">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="xilinx.gnu.ppc.exe.debug.640949368" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="com.xilinx.sdk.managedbuilder.XELF.ppc" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="xilinx.gnu.ppc.exe.debug.640949368" name="Debug" parent="xilinx.gnu.ppc.exe.debug">
+					<folderInfo id="xilinx.gnu.ppc.exe.debug.640949368." name="/" resourcePath="">
+						<toolChain id="xilinx.gnu.ppc.exe.debug.toolchain.818951445" name="Xilinx PowerPC GNU Toolchain" superClass="xilinx.gnu.ppc.exe.debug.toolchain">
+							<targetPlatform binaryParser="com.xilinx.sdk.managedbuilder.XELF.ppc" id="xilinx.ppc.target.gnu.base.debug.659410591" isAbstract="false" name="Debug Platform" superClass="xilinx.ppc.target.gnu.base.debug"/>
+							<builder buildPath="${workspace_loc:/sw_bpm_ibfb_switch}/Debug" enableAutoBuild="true" id="xilinx.gnu.ppc.toolchain.builder.debug.1388445105" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU make" superClass="xilinx.gnu.ppc.toolchain.builder.debug"/>
+							<tool id="xilinx.gnu.ppc.c.toolchain.assembler.debug.1977673807" name="PowerPC gcc assembler" superClass="xilinx.gnu.ppc.c.toolchain.assembler.debug">
+								<inputType id="xilinx.gnu.assembler.input.824288739" superClass="xilinx.gnu.assembler.input"/>
+							</tool>
+							<tool id="xilinx.gnu.ppc.c.toolchain.compiler.debug.688271575" name="PowerPC gcc compiler" superClass="xilinx.gnu.ppc.c.toolchain.compiler.debug">
+								<option defaultValue="gnu.c.optimization.level.none" id="xilinx.gnu.compiler.option.optimization.level.592436602" name="Optimization Level" superClass="xilinx.gnu.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="xilinx.gnu.compiler.option.debugging.level.1460955418" name="Debug Level" superClass="xilinx.gnu.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="xilinx.gnu.ppc.compiler.inferred.ppc440.988302216" name="Compile for PPC440" superClass="xilinx.gnu.ppc.compiler.inferred.ppc440" value="true" valueType="boolean"/>
+								<option id="xilinx.gnu.ppc.compiler.inferred.fpu.1477985412" name="FPU" superClass="xilinx.gnu.ppc.compiler.inferred.fpu" value="xilinx.gnu.ppc.compiler.inferred.fpu.sp_full" valueType="enumerated"/>
+								<option id="xilinx.gnu.compiler.inferred.swplatform.includes.2008967928" name="Software Platform Include Path" superClass="xilinx.gnu.compiler.inferred.swplatform.includes" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../bsp/ppc440_inst/include"/>
+								</option>
+								<inputType id="xilinx.gnu.ppc.c.compiler.input.261650437" name="C source files" superClass="xilinx.gnu.ppc.c.compiler.input"/>
+							</tool>
+							<tool id="xilinx.gnu.ppc.cxx.toolchain.compiler.debug.897776235" name="PowerPC g++ compiler" superClass="xilinx.gnu.ppc.cxx.toolchain.compiler.debug">
+								<option defaultValue="gnu.c.optimization.level.none" id="xilinx.gnu.compiler.option.optimization.level.852123349" name="Optimization Level" superClass="xilinx.gnu.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="xilinx.gnu.compiler.option.debugging.level.8623810" name="Debug Level" superClass="xilinx.gnu.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="xilinx.gnu.ppc.compiler.inferred.ppc440.983732480" name="Compile for PPC440" superClass="xilinx.gnu.ppc.compiler.inferred.ppc440" value="true" valueType="boolean"/>
+								<option id="xilinx.gnu.ppc.compiler.inferred.fpu.1136576710" name="FPU" superClass="xilinx.gnu.ppc.compiler.inferred.fpu" value="xilinx.gnu.ppc.compiler.inferred.fpu.sp_full" valueType="enumerated"/>
+								<option id="xilinx.gnu.compiler.inferred.swplatform.includes.831799251" name="Software Platform Include Path" superClass="xilinx.gnu.compiler.inferred.swplatform.includes" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../bsp/ppc440_inst/include"/>
+								</option>
+							</tool>
+							<tool id="xilinx.gnu.ppc.toolchain.archiver.133927834" name="PowerPC archiver" superClass="xilinx.gnu.ppc.toolchain.archiver"/>
+							<tool id="xilinx.gnu.ppc.c.toolchain.linker.debug.2078286169" name="PowerPC gcc linker" superClass="xilinx.gnu.ppc.c.toolchain.linker.debug">
+								<option id="xilinx.gnu.ppc.linker.inferred.ppc440.1290693475" name="Link with libraries compiled for PPC440" superClass="xilinx.gnu.ppc.linker.inferred.ppc440" value="true" valueType="boolean"/>
+								<option id="xilinx.gnu.ppc.linker.inferred.fpu.1019680227" name="FPU" superClass="xilinx.gnu.ppc.linker.inferred.fpu" value="xilinx.gnu.ppc.linker.inferred.fpu.sp_full" valueType="enumerated"/>
+								<option id="xilinx.gnu.linker.inferred.swplatform.lpath.1437359963" name="Software Platform Library Path" superClass="xilinx.gnu.linker.inferred.swplatform.lpath" valueType="libPaths">
+									<listOptionValue builtIn="false" value="../../bsp/ppc440_inst/lib"/>
+								</option>
+								<option id="xilinx.gnu.linker.inferred.swplatform.flags.1128313755" name="Software Platform Inferred Flags" superClass="xilinx.gnu.linker.inferred.swplatform.flags" valueType="libs">
+									<listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,--end-group"/>
+								</option>
+								<option id="xilinx.gnu.c.linker.option.lscript.1296248556" name="Linker Script" superClass="xilinx.gnu.c.linker.option.lscript" value="../src/lscript.ld" valueType="string"/>
+								<inputType id="xilinx.gnu.linker.input.222395300" superClass="xilinx.gnu.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+								<inputType id="xilinx.gnu.linker.input.lscript.241442798" name="Linker Script" superClass="xilinx.gnu.linker.input.lscript"/>
+							</tool>
+							<tool id="xilinx.gnu.ppc.cxx.toolchain.linker.debug.8407221" name="PowerPC g++ linker" superClass="xilinx.gnu.ppc.cxx.toolchain.linker.debug">
+								<option id="xilinx.gnu.ppc.linker.inferred.ppc440.2090971967" name="Link with libraries compiled for PPC440" superClass="xilinx.gnu.ppc.linker.inferred.ppc440" value="true" valueType="boolean"/>
+								<option id="xilinx.gnu.ppc.linker.inferred.fpu.675862504" name="FPU" superClass="xilinx.gnu.ppc.linker.inferred.fpu" value="xilinx.gnu.ppc.linker.inferred.fpu.sp_full" valueType="enumerated"/>
+								<option id="xilinx.gnu.linker.inferred.swplatform.lpath.1310259718" name="Software Platform Library Path" superClass="xilinx.gnu.linker.inferred.swplatform.lpath" valueType="libPaths">
+									<listOptionValue builtIn="false" value="../../bsp/ppc440_inst/lib"/>
+								</option>
+								<option id="xilinx.gnu.linker.inferred.swplatform.flags.415344904" name="Software Platform Inferred Flags" superClass="xilinx.gnu.linker.inferred.swplatform.flags" valueType="libs">
+									<listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,--end-group"/>
+								</option>
+								<option id="xilinx.gnu.c.linker.option.lscript.1203394171" name="Linker Script" superClass="xilinx.gnu.c.linker.option.lscript" value="../src/lscript.ld" valueType="string"/>
+							</tool>
+							<tool id="xilinx.gnu.ppc.size.debug.1710681722" name="PowerPC Print Size" superClass="xilinx.gnu.ppc.size.debug"/>
+							<tool id="xilinx.elfcheck.ppc.debug.1694043754" name="Xilinx ELF Check" superClass="xilinx.elfcheck.ppc.debug">
+								<option id="xilinx.elfcheck.option.hwspec.1136747206" name="Hardware Specification" superClass="xilinx.elfcheck.option.hwspec" value="-hw ../../hw/system.xml" valueType="string"/>
+								<option id="xilinx.elfcheck.option.procname.1385921306" name="Processor Name" superClass="xilinx.elfcheck.option.procname" value="-pe ppc440_inst" valueType="string"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="xilinx.gnu.ppc.exe.release.1988383201">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="xilinx.gnu.ppc.exe.release.1988383201" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="com.xilinx.sdk.managedbuilder.XELF.ppc" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="xilinx.gnu.ppc.exe.release.1988383201" name="Release" parent="xilinx.gnu.ppc.exe.release">
+					<folderInfo id="xilinx.gnu.ppc.exe.release.1988383201." name="/" resourcePath="">
+						<toolChain id="xilinx.gnu.ppc.exe.release.toolchain.14687692" name="Xilinx PowerPC GNU Toolchain" superClass="xilinx.gnu.ppc.exe.release.toolchain">
+							<targetPlatform binaryParser="com.xilinx.sdk.managedbuilder.XELF.ppc" id="xilinx.ppc.target.gnu.base.release.612932991" isAbstract="false" name="Debug Platform" superClass="xilinx.ppc.target.gnu.base.release"/>
+							<builder buildPath="${workspace_loc:/sw_bpm_ibfb_switch}/Release" enableAutoBuild="true" id="xilinx.gnu.ppc.toolchain.builder.release.197663180" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU make" superClass="xilinx.gnu.ppc.toolchain.builder.release"/>
+							<tool id="xilinx.gnu.ppc.c.toolchain.assembler.release.420906555" name="PowerPC gcc assembler" superClass="xilinx.gnu.ppc.c.toolchain.assembler.release">
+								<inputType id="xilinx.gnu.assembler.input.694903833" superClass="xilinx.gnu.assembler.input"/>
+							</tool>
+							<tool id="xilinx.gnu.ppc.c.toolchain.compiler.release.1261613214" name="PowerPC gcc compiler" superClass="xilinx.gnu.ppc.c.toolchain.compiler.release">
+								<option defaultValue="gnu.c.optimization.level.more" id="xilinx.gnu.compiler.option.optimization.level.776842865" name="Optimization Level" superClass="xilinx.gnu.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="xilinx.gnu.compiler.option.debugging.level.350820491" name="Debug Level" superClass="xilinx.gnu.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="xilinx.gnu.ppc.compiler.inferred.ppc440.1948619633" name="Compile for PPC440" superClass="xilinx.gnu.ppc.compiler.inferred.ppc440" value="true" valueType="boolean"/>
+								<option id="xilinx.gnu.ppc.compiler.inferred.fpu.1119947179" name="FPU" superClass="xilinx.gnu.ppc.compiler.inferred.fpu" value="xilinx.gnu.ppc.compiler.inferred.fpu.sp_full" valueType="enumerated"/>
+								<option id="xilinx.gnu.compiler.inferred.swplatform.includes.333102566" name="Software Platform Include Path" superClass="xilinx.gnu.compiler.inferred.swplatform.includes" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../bsp/ppc440_inst/include"/>
+								</option>
+								<inputType id="xilinx.gnu.ppc.c.compiler.input.1305475400" name="C source files" superClass="xilinx.gnu.ppc.c.compiler.input"/>
+							</tool>
+							<tool id="xilinx.gnu.ppc.cxx.toolchain.compiler.release.746342192" name="PowerPC g++ compiler" superClass="xilinx.gnu.ppc.cxx.toolchain.compiler.release">
+								<option defaultValue="gnu.c.optimization.level.more" id="xilinx.gnu.compiler.option.optimization.level.626893427" name="Optimization Level" superClass="xilinx.gnu.compiler.option.optimization.level" valueType="enumerated"/>
+								<option id="xilinx.gnu.compiler.option.debugging.level.1165107062" name="Debug Level" superClass="xilinx.gnu.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
+								<option id="xilinx.gnu.ppc.compiler.inferred.ppc440.1539259040" name="Compile for PPC440" superClass="xilinx.gnu.ppc.compiler.inferred.ppc440" value="true" valueType="boolean"/>
+								<option id="xilinx.gnu.ppc.compiler.inferred.fpu.1154611949" name="FPU" superClass="xilinx.gnu.ppc.compiler.inferred.fpu" value="xilinx.gnu.ppc.compiler.inferred.fpu.sp_full" valueType="enumerated"/>
+								<option id="xilinx.gnu.compiler.inferred.swplatform.includes.768916378" name="Software Platform Include Path" superClass="xilinx.gnu.compiler.inferred.swplatform.includes" valueType="includePath">
+									<listOptionValue builtIn="false" value="../../bsp/ppc440_inst/include"/>
+								</option>
+							</tool>
+							<tool id="xilinx.gnu.ppc.toolchain.archiver.1154175455" name="PowerPC archiver" superClass="xilinx.gnu.ppc.toolchain.archiver"/>
+							<tool id="xilinx.gnu.ppc.c.toolchain.linker.release.635839466" name="PowerPC gcc linker" superClass="xilinx.gnu.ppc.c.toolchain.linker.release">
+								<option id="xilinx.gnu.ppc.linker.inferred.ppc440.1471903262" name="Link with libraries compiled for PPC440" superClass="xilinx.gnu.ppc.linker.inferred.ppc440" value="true" valueType="boolean"/>
+								<option id="xilinx.gnu.ppc.linker.inferred.fpu.199723753" name="FPU" superClass="xilinx.gnu.ppc.linker.inferred.fpu" value="xilinx.gnu.ppc.linker.inferred.fpu.sp_full" valueType="enumerated"/>
+								<option id="xilinx.gnu.linker.inferred.swplatform.lpath.745984640" name="Software Platform Library Path" superClass="xilinx.gnu.linker.inferred.swplatform.lpath" valueType="libPaths">
+									<listOptionValue builtIn="false" value="../../bsp/ppc440_inst/lib"/>
+								</option>
+								<option id="xilinx.gnu.linker.inferred.swplatform.flags.222089282" name="Software Platform Inferred Flags" superClass="xilinx.gnu.linker.inferred.swplatform.flags" valueType="libs">
+									<listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,--end-group"/>
+								</option>
+								<option id="xilinx.gnu.c.linker.option.lscript.25082713" name="Linker Script" superClass="xilinx.gnu.c.linker.option.lscript" value="../src/lscript.ld" valueType="string"/>
+								<inputType id="xilinx.gnu.linker.input.67518299" superClass="xilinx.gnu.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+								<inputType id="xilinx.gnu.linker.input.lscript.313719421" name="Linker Script" superClass="xilinx.gnu.linker.input.lscript"/>
+							</tool>
+							<tool id="xilinx.gnu.ppc.cxx.toolchain.linker.release.72562689" name="PowerPC g++ linker" superClass="xilinx.gnu.ppc.cxx.toolchain.linker.release">
+								<option id="xilinx.gnu.ppc.linker.inferred.ppc440.518391843" name="Link with libraries compiled for PPC440" superClass="xilinx.gnu.ppc.linker.inferred.ppc440" value="true" valueType="boolean"/>
+								<option id="xilinx.gnu.ppc.linker.inferred.fpu.49884578" name="FPU" superClass="xilinx.gnu.ppc.linker.inferred.fpu" value="xilinx.gnu.ppc.linker.inferred.fpu.sp_full" valueType="enumerated"/>
+								<option id="xilinx.gnu.linker.inferred.swplatform.lpath.707311419" name="Software Platform Library Path" superClass="xilinx.gnu.linker.inferred.swplatform.lpath" valueType="libPaths">
+									<listOptionValue builtIn="false" value="../../bsp/ppc440_inst/lib"/>
+								</option>
+								<option id="xilinx.gnu.linker.inferred.swplatform.flags.157002045" name="Software Platform Inferred Flags" superClass="xilinx.gnu.linker.inferred.swplatform.flags" valueType="libs">
+									<listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,--end-group"/>
+								</option>
+								<option id="xilinx.gnu.c.linker.option.lscript.248170650" name="Linker Script" superClass="xilinx.gnu.c.linker.option.lscript" value="../src/lscript.ld" valueType="string"/>
+							</tool>
+							<tool id="xilinx.gnu.ppc.size.release.1964081788" name="PowerPC Print Size" superClass="xilinx.gnu.ppc.size.release"/>
+							<tool id="xilinx.elfcheck.ppc.release.649351387" name="Xilinx ELF Check" superClass="xilinx.elfcheck.ppc.release">
+								<option id="xilinx.elfcheck.option.hwspec.1076989028" name="Hardware Specification" superClass="xilinx.elfcheck.option.hwspec" value="-hw ../../hw/system.xml" valueType="string"/>
+								<option id="xilinx.elfcheck.option.procname.1129884058" name="Processor Name" superClass="xilinx.elfcheck.option.procname" value="-pe ppc440_inst" valueType="string"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="sw_bpm_ibfb_switch.xilinx.gnu.ppc.exe.1508152505" name="Xilinx PowerPC Executable" projectType="xilinx.gnu.ppc.exe"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="xilinx.gnu.ppc.exe.debug.640949368;xilinx.gnu.ppc.exe.debug.640949368.">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.PPCGCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="xilinx.gnu.ppc.exe.release.1988383201;xilinx.gnu.ppc.exe.release.1988383201.;xilinx.gnu.ppc.c.toolchain.compiler.release.1261613214;xilinx.gnu.ppc.c.compiler.input.1305475400">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.PPCGCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="xilinx.gnu.ppc.exe.debug.640949368;xilinx.gnu.ppc.exe.debug.640949368.;xilinx.gnu.ppc.c.toolchain.compiler.debug.688271575;xilinx.gnu.ppc.c.compiler.input.261650437">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.PPCGCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="xilinx.gnu.ppc.exe.release.1988383201;xilinx.gnu.ppc.exe.release.1988383201.">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.PPCGCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="refreshScope"/>
+</cproject>

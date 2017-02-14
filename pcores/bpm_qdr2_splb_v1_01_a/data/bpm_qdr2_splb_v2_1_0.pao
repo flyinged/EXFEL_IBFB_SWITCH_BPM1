@@ -1,0 +1,8 @@
+
+lib proc_common_v3_00_a  all 
+lib plbv46_slave_burst_v1_01_a  all 
+
+lib psi_common_v1_00_a      pkg_arrays          vhdl
+lib bpm_qdr2_splb_v1_01_a  qdr2_sram_ctrl      vhdl
+lib bpm_qdr2_splb_v1_01_a  user_logic          vhdl
+lib bpm_qdr2_splb_v1_01_a  bpm_qdr2_splb      vhdl

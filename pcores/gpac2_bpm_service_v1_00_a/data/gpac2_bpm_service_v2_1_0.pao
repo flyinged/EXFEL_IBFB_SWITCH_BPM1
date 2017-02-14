@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          C:/Temp/G/XFEL/14_Firmware/15_Test_Environment/GPAC/GPAC_loopback_tests/02_Design/BPM_FPGA/02_Design/06_EDK/pcores/loopback_test_v1_00_a/data/loopback_test_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Mon Sep 19 11:30:42 2011 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib plbv46_slave_single_v1_01_a  all
+lib gpac2_bpm_service_v1_00_a gpac2_bpm_service vhdl
+lib gpac2_bpm_service_v1_00_a user_logic vhdl

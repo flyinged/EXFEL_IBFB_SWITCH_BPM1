@@ -1,0 +1,3 @@
+PROCESSOR=ppc440_inst
+REPOSITORIES=
+HWSPEC=../hw/system.xml
